@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: fpco/stack-build:lts-12.12
+    working_directory: /home/stackage
+    steps:
+      - checkout
+      - restore_cache:
+          key: build-cache
+      - run: stack build --test --only-dependencies 
+      - save_cache:
+          key: build-cache
+          paths:
+            - ~/.stack
+            - .stack-work
+      - run: stack install --test --no-terminal

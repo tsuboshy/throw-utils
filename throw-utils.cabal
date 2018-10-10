@@ -1,0 +1,49 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: d1506a01e274978de8852a2182bbddb5e9ae454edfc8ccfce1a3f3993e560ea7
+
+name:           throw-utils
+version:        0.1.0.0
+category:       Web
+homepage:       https://github.com/githubuser/throw-utils#readme
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      Control.Monad.Throw.Utils
+  other-modules:
+      Paths_throw_utils
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -O2
+  build-depends:
+      base >=4.7 && <5
+    , safe-exceptions
+  default-language: Haskell2010
+
+test-suite doc-test
+  type: exitcode-stdio-1.0
+  main-is: DocTest.hs
+  other-modules:
+      Control.Monad.Throw.Utils
+      Paths_throw_utils
+  hs-source-dirs:
+      test
+      src
+  ghc-options: -main-is DocTest
+  cpp-options: -DTEST
+  build-depends:
+      base >=4.7 && <5
+    , doctest
+    , safe-exceptions
+  default-language: Haskell2010

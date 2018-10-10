@@ -1,0 +1,33 @@
+name:                throw-utils
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/githubuser/throw-utils#readme
+license:             BSD3
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2018 Author name here
+category:            Web
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+  - safe-exceptions
+
+library:
+  source-dirs: src
+  ghc-options:
+    - -Wall
+    - -O2
+
+
+tests:
+  doc-test:
+    cpp-options: '-DTEST'
+    main: DocTest
+    source-dirs:
+      - test
+      - src
+    dependencies:
+      - doctest
